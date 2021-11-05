@@ -6,40 +6,41 @@ import com.devsuperior.dsvendas.entities.Seller;
 
 public class SaleSuccessDTO implements Serializable {
 	
-		private static final long serialVersionUID = 1L;
-		private String sellerName;
-	    private long visited;
-	    private long deals;
+	private String sellerName;
+    private Long visited;
+    private Long deals;
 
-	    public SaleSuccessDTO(){}
+    public SaleSuccessDTO() {
 
-	    public SaleSuccessDTO(Seller seller, long visited, long deals) {
-	        this.sellerName = seller.getName();
-	        this.visited = visited;
-	        this.deals = deals;
-	    }
+    }
 
-	    public String getSellerName() {
-	        return sellerName;
-	    }
+    public SaleSuccessDTO(Seller seller, Long visited, Long deals) {
+        this.sellerName = seller.getName();
+        this.visited = visited;
+        this.deals = deals;
+    }
 
-	    public void setSellerName(String sellerName) {
-	        this.sellerName = sellerName;
-	    }
+    public String getSellerName() {
+        return sellerName;
+    }
 
-	    public long getVisited() {
-	        return visited;
-	    }
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
 
-	    public void setVisited(long visited) {
-	        this.visited = visited;
-	    }
+    public Long getVisited() {
+        return visited;
+    }
 
-	    public long getDeals() {
-	        return deals;
-	    }
+    public void setVisited(Long visited) {
+        this.visited = visited;
+    }
 
-	    public void setDeals(long deals) {
-	        this.deals = deals;
-	    }
+    public Long getDeals() {
+        return deals;
+    }
+
+    public void setDeals(Long deals) {
+        this.deals = deals;
+    }
 }
