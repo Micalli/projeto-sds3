@@ -2,7 +2,7 @@
 
 # Sobre o projeto
 
-https://kalebe-dsvendas.netlify.app/
+https://dsvendas-micalli.netlify.app/
 
 Ds Vendas é uma aplicação full stack construída durante a Semana Spring React (#sds3), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
@@ -10,10 +10,10 @@ Esta aplicação consiste em exibir um dashboard a partir de dados fornecidos po
 
 
 ## Layout 
-![Web 1](https://github.com/KalebeSantana/projeto-sds3/blob/master/assets/DSVendas%20-%20Google%20Chrome%2010_05_2021%2013_15_09.png)
+<img src=https://i.imgur.com/QWieO4O.png>
 
 ## Dashboard
-![Web 2](https://github.com/KalebeSantana/projeto-sds3/blob/master/assets/DSVendas%20-%20Google%20Chrome%2010_05_2021%2012_46_12.png)
+<img src=https://i.imgur.com/BOfbNSg.png>
 
 # Tecnologias utilizadas
 ## Back end
