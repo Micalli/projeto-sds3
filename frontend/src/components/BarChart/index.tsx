@@ -18,53 +18,60 @@ type ChartData = {
 };
 
 function BarChart() {
-  const [chartData, setChartData] = useState<ChartData>({
-    labels: {
-      categories: [],
-    },
-    series: [
-      {
-        name: "",
-        data: [],
-      },
-    ],
-  });
+    const [chartData, setChartData] = useState<ChartData>({
+		labels: {
+			categories: [],
+		},
+		series: [
+			{
+				name: "",
+				data: [],
+			},
+		],
+	});
 
-  useEffect(() => {
-    axios.get(`${BASE_URL}/sales/success-by-seller`).then((response) => {
-      const data = response.data as SaleSuccess[];
-      const myLabels = data.map((x) => x.sellerName);
-      const mySeries = data.map((x) => round((100.0 * x.deals) / x.visited, 1));
-      setChartData({
-        labels: {
-          categories: myLabels,
-        },
-        series: [
-          {
-            name: "% Sucesso",
-            data: mySeries,
-          },
-        ],
-      });
-    });
-  }, []);
+	useEffect(() => {
+		axios.get(`${BASE_URL}/sales/success-by-seller`).then((response) => {
+			//We also have to define the type to be the SaleSum
+			const data = response.data as SaleSuccess[];
+			const myLabels = data.map((x) => x.sellerName);
+			const mySeries = data.map((x) => round((100.0 * x.deals) / x.visited, 1));
 
-  const options = {
-    plotOptions: {
-      bar: {
-        horizontal: true,
-      },
-    },
-  };
+			setChartData({
+				labels: {
+					categories: myLabels,
+				},
+				series: [
+					{
+						name: "Success Rate",
+						data: mySeries,
+					},
+				],
+			});
+		});
+		
+	}, []);
 
-  return (
-    <Chart
-      options={{ ...options, xaxis: chartData.labels }}
-      series={chartData.series}
-      type="bar"
-      height="240"
-    />
-  );
+	
+	const options = {
+		plotOptions: {
+			bar: {
+				horizontal: true,
+			},
+		},
+	};
+
+	
+
+	return (
+		<Chart
+			
+			options={{ ...options, xaxis: chartData.labels }}
+			series={chartData.series}
+			type="bar"
+			height="240"
+		/>
+	);
 }
 
 export default BarChart;
