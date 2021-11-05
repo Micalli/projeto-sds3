@@ -6,7 +6,6 @@ import { BASE_URL } from "Utils/request";
 
 import Pagination from "components/Pagination";
 
-
 function DataTable() {
   const [page, setPage] = useState<SalePage>({
     first: true,
