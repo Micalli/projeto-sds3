@@ -32,10 +32,9 @@ function BarChart() {
 
 	useEffect(() => {
 		axios.get(`${BASE_URL}/sales/success-by-seller`).then((response) => {
-			//We also have to define the type to be the SaleSum
 			const data = response.data as SaleSuccess[];
-			const myLabels = data.map((x) => x.sellerName);
-			const mySeries = data.map((x) => round((100.0 * x.deals) / x.visited, 1));
+			const myLabels = data.map(x => x.sellerName);
+			const mySeries = data.map(x => round(100.0 * x.deals / x.visited, 1));
 
 			setChartData({
 				labels: {
@@ -43,15 +42,14 @@ function BarChart() {
 				},
 				series: [
 					{
-						name: "Success Rate",
-						data: mySeries,
+						name: "% Sucesso",
+						data: mySeries
 					},
 				],
 			});
 		});
 		
 	}, []);
-
 	
 	const options = {
 		plotOptions: {
@@ -61,11 +59,8 @@ function BarChart() {
 		},
 	};
 
-	
-
 	return (
 		<Chart
-			
 			options={{ ...options, xaxis: chartData.labels }}
 			series={chartData.series}
 			type="bar"
