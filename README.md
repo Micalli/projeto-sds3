@@ -36,7 +36,7 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/KalebeSantana/projeto-sds3
+git clone https://github.com/Micalli/projeto-sds3.git
 
 # entrar na pasta do projeto backend
 cd backend
@@ -50,7 +50,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/KalebeSantana/projeto-sds3
+git clone https://github.com/Micalli/projeto-sds3.git
 
 # entrar na pasta do projeto frontend 
 cd frontend
